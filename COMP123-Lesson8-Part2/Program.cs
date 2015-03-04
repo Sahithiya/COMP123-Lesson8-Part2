@@ -72,6 +72,13 @@ namespace COMP123_Lesson8_Part2
             if (File.Exists(prompt))
             {
                 Console.WriteLine("The File Exists");
+                Console.WriteLine();
+                Console.WriteLine("File Stats:");
+                Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("Create Time: " + File.GetCreationTime(prompt));
+                Console.WriteLine("Last Access: " + File.GetLastAccessTime(prompt));
+                Console.WriteLine("Last Write : " + File.GetLastWriteTime(prompt));
+                Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
                 
             }
             else
