@@ -11,6 +11,12 @@ namespace COMP123_Lesson8_Part2
     {
         static void Main(string[] args)
         {
+            MainMenu();
+            
+        }
+
+        private static void MainMenu()
+        {
             int selection = 0;
 
             while (selection != 3)
@@ -23,9 +29,16 @@ namespace COMP123_Lesson8_Part2
                 Console.WriteLine("+                              +");
                 Console.WriteLine("++++++++++++++++++++++++++++++++");
                 Console.Write("Please make your selection: ");
-                selection = Convert.ToInt32(Console.ReadLine());
-                
-                
+
+                try
+                {
+                    selection = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception error)
+                {
+                    selection = 0;
+                }
+
                 switch (selection)
                 {
                     case 1:
@@ -41,12 +54,12 @@ namespace COMP123_Lesson8_Part2
                         Console.WriteLine();
                         Console.WriteLine("Incorrect entry - Please try again");
                         Console.WriteLine();
+                        WaitForKey();
                         break;
                 }
 
                 Console.Clear(); // Clears the screen
             }
-            
         }
 
         private static void CheckFile()
